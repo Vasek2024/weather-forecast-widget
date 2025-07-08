@@ -27,6 +27,7 @@ body{
 .header__icon-title {
     text-transform: uppercase;
 }
+
 .header__choose {
     width:25%;
     display: flex;
