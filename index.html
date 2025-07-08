@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Виджет с прогнозом погоды на React</title>
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__icon">
+                <img class="header__icon-img" src="./images/svg/Group.svg" alt="">
+                <span class="header__icon-title">React weather</span>
+            </div>
+            <div class="header__choose">
+                <img class="header__choose-img" src="./images/svg/Vector.svg" alt="">
+                <div style="display: flex; border: 1px solid #ccc;">
+                    <input type="text" style="border: none;"/>
+                    <button style="border: none;">🔍</button>
+                </div>
+                <!-- <input class="header__choose-search" type="text" name="text" class="search" placeholder="Введите город">
+                <input type="submit" value="Отправить" class="button button-orange" disabled > -->
+            </div>
+        </header>
+        <main class="main">
+            <article class="article__today">
+                <section class="article__today-temperature">
+                    <span class="today-temperature__temp">20°</span>
+                    <span class="today-temperature__day">Сегодня</span>
+                    <span class="today-temperature__time">Время: 21:54</span>
+                    <img class="today-temperature__icon" src="./images/svg/Group (1).svg" alt="">
+                    <span class="today-temperature__city">Город: Санкт-Петербург</span>
+                </section>
+                <section class="article__today-data">
+                    <div class="today__data-temp">
+                        <img class="today__temp-img" src="./images/svg/thermometer 1.svg" alt=""></img>
+                        <span class="today__temp-temp">Температура</span>
+                        <span class="today__temp-difference">20° - ощущается как 17°</span>
+                    </div>
+                    <div class="today__data-pressure">
+                        <img src="./images/svg/humidity 1.svg" alt=""></img>
+                        <span class="today__pressure-pressure">Давление </span>
+                        <span class="today__temp-ok">765 мм ртутного столба - нормальное</span>
+                    </div>
+                    <div class="today__data-precipitation">
+                        <img src="./images/svg/Group (4).svg" alt=""></img>
+                        <span class="today__precipitation-precipitation">Осадки</span>
+                        <span class="today__temp-nou">Без осадков</span>
+                    </div>
+                    <div class="today__data-wind">
+                        <img src="./images/svg/wind 1.svg" alt=""></img>
+                        <span class="today__wind-wind">Ветер</span>
+                        <span class="today__temp-direction">3 м/с юго-запад - легкий ветер</span>
+                    </div>
+                </section>
+            </article>
+            <article class="article__choice">
+                <nav class="article__choice-nav">
+                    <ul class="choice__nav">
+                        <li class="choice__nav-one">На неделю</li>
+                        <li class="choice__nav-two">На 10 дней</li>
+                        <li class="choice__nav-three">На месяц</li>
+                    </ul>
+                    <button class="choice__btn">Очистить</button>
+                </nav>
+                <section class="article__choice-sections">
+                    <div class="choice__sections">
+                        <h2 class="choice__sections-title">Сегодня</h2>
+                        <span class="choice__sections-month">06 июля</span>
+                        <img class="choice__sections-img" src="" alt="">
+                        <span class="choice__sections-min">+18°</span>
+                        <span class="choice__sections-max">+15°</span>
+                        <span class="choice__sections-sky">Облачно</span>
+                    </div>
+                </section>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
