@@ -20,7 +20,6 @@ body{
     display: flex;
     align-items: center;
     column-gap: 10%;
-    /* border: 1px solid red; */
 }
 .header__icon-img {
 }
