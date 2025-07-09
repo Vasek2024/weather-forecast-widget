@@ -1,0 +1,199 @@
+.main {
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.article__today {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.article__today-temperature {
+    padding: 10px 16px;
+    width: 34%;
+    background: #4f4f4f;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-template-rows: auto auto auto ;
+    grid-template-areas:
+    "temp icon"
+    "day icon"
+    "time icon"
+    "city city";
+}
+.today-temperature__temp {
+    grid-area: temp;
+    font-weight: 500;
+    font-size: 96px;
+    color: #4793ff
+}
+.today-temperature__day {
+    margin-bottom: 10px;
+    grid-area: day;
+    font-weight: 400;
+    font-size: 30px;
+    color: #fff;
+}
+.today-temperature__time {
+    grid-area: time;
+    font-weight: 400;
+    font-size: 25px;
+    color: #939cb0;
+}
+.today-temperature__icon {
+    margin-top: 10px;
+    grid-area: icon;
+}
+.today-temperature__city {
+    grid-area: city;
+    font-weight: 400;
+    font-size: 25px;
+    color: #939cb0;
+}
+
+.article__today-data {
+    padding: 40px 20px;
+    width: 62%;
+    background: #4f4f4f;
+    background-image: url(/public/fon.png);
+    background-position: right;
+    background-repeat: repeat-y;
+    background-size:contain;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+}
+.today__data-temp {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.today__temp-img,
+.today__pressure-img,
+.today__precipitation-img,
+.today__wind-img{
+    width: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+}
+.today__temp-temp,
+.today__pressure-pressure,
+.today__precipitation-precipitation,
+.today__wind-wind{
+    width: 96px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #939cb0;
+}
+.today__temp-difference,
+.today__temp-ok,
+.today__temp-nou,
+.today__temp-direction{
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+}
+.today__data-pressure {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.today__data-precipitation {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.today__data-wind {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+
+.article__choice {
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+    background: #4f4f4f;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #fff;
+}
+.article__choice-nav {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.choice__nav {
+    padding: 0;
+    display: flex;
+    column-gap: 16px;
+}
+.choice__nav-one,
+.choice__nav-two,
+.choice__nav-three,
+.choice__btn{
+    text-align: center;
+    width: 142px;
+    height: 35px;
+}
+.choice__nav-one,
+.choice__nav-two,
+.choice__nav-three{
+    padding: 7px;
+}
+
+.article__choice-sections {
+    padding: 18px;
+    box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+    background: #4f4f4f;
+    border-radius: 0 0 20px 20px;
+    height: 240px;
+    display: flex;
+    column-gap: 2%;
+}
+.choice__sections {
+    padding: 12px;
+    border-radius: 10px;
+    background: #2e3035;
+    width: 149px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+}
+.choice__sections-title {
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+}
+.choice__sections-month {
+    font-weight: 400;
+    font-size: 14px;
+    color: #939cb0;
+}
+/* Иконка погоды */
+.choice__sections-img {
+}
+.choice__sections-min {
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+}
+.choice__sections-max {
+    font-weight: 400;
+    font-size: 13px;
+    color: #939cb0;
+}
+.choice__sections-sky {
+    font-weight: 400;
+    font-size: 13px;
+    color: #939cb0;
+}
