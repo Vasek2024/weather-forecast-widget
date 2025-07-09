@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import './Main.css'
 
 const Main = () => {
+    const [city, setCity] = useState('')
+    const [weather, setWeather] = useState()
+    const url = 'https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}'
+
     return(
         <main className="main">
             <article className="article__today">
