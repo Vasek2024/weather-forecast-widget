@@ -17,7 +17,7 @@
 }
 
 .header__choose {
-    width:30%;
+    /* width:30%; */
     display: flex;
     align-items: center;
     column-gap: 6%;
@@ -28,7 +28,7 @@
 }
 .header__choose-input{
     padding: 8px;
-    width: 260px;
+    width: 100%;
     border: none;
 }
 .header__choose-btn{
@@ -42,4 +42,15 @@
 .header__choose-img {
 }
 .header__choose-search {
+}
+
+@media (max-width: 500px){
+    .header {
+        flex-direction: column;
+        row-gap: 14px;
+        align-items: center;
+    }
+    .header__choose-img {
+        display: none;
+    }
 }

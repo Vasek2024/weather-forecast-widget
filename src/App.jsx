@@ -6,7 +6,7 @@ import Main from "./components/Main/Main";
 
 const App = () => {
   return (
-    <div class="wrapper">
+    <div className="wrapper">
       <Header />
       <Main/>
     </div>
