@@ -1,0 +1,36 @@
+.choice__sections {
+    padding: 12px;
+    border-radius: 10px;
+    background: #2e3035;
+    width: 149px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+}
+.choice__sections-title {
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+}
+.choice__sections-month {
+    font-weight: 400;
+    font-size: 14px;
+    color: #939cb0;
+}
+
+.choice__sections-min {
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+}
+.choice__sections-max {
+    font-weight: 400;
+    font-size: 13px;
+    color: #939cb0;
+}
+.choice__sections-sky {
+    font-weight: 400;
+    font-size: 13px;
+    color: #939cb0;
+}

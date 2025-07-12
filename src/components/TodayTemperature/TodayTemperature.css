@@ -1,0 +1,78 @@
+.article__today-temperature {
+    padding: 10px 16px;
+    width: 34%;
+    background: #4f4f4f;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-template-rows: auto auto auto ;
+    grid-template-areas:
+    "temp icon"
+    "day icon"
+    "time icon"
+    "city city";
+}
+.today-temperature__temp {
+    grid-area: temp;
+    font-weight: 500;
+    font-size: 96px;
+    color: #4793ff
+}
+.today-temperature__day {
+    margin-bottom: 10px;
+    grid-area: day;
+    font-weight: 400;
+    font-size: 30px;
+    color: #fff;
+}
+.today-temperature__time {
+    grid-area: time;
+    font-weight: 400;
+    font-size: 25px;
+    color: #939cb0;
+}
+.today-temperature__icon {
+    margin-top: 10px;
+    grid-area: icon;
+}
+.today-temperature__city {
+    grid-area: city;
+    font-weight: 400;
+    font-size: 25px;
+    color: #939cb0;
+}
+
+@media (max-width: 940px){
+    .article__today-temperature {
+        width: 36%;
+    }
+    .today-temperature__temp {
+        font-size: 50px;
+    }
+    .today-temperature__day {
+        font-size:24px;
+    }
+    .today-temperature__time {
+        font-size: 16px;
+    }
+    .today-temperature__icon {
+        max-width: 70%;
+    }
+    .today-temperature__city {
+        font-size: 18px;
+    }
+}
+
+
+@media (max-width: 660px){
+    .article__today-temperature{
+        margin: 0 auto;
+        width: 60%;
+    }
+}
+
+@media (max-width: 460px){
+    .article__today-temperature {
+        width: 100%;
+    }
+}

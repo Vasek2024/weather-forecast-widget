@@ -1,0 +1,81 @@
+.article__today-data {
+    padding: 40px 3%;
+    width: 62%;
+    background: #4f4f4f;
+    background-image: url(/public/fon.png);
+    background-position: right;
+    background-repeat: repeat-y;
+    background-size:contain;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+}
+
+.today__data-temp {
+    display: flex;
+    align-items: center;
+    column-gap: 4%;
+}
+.today__temp-img,
+.today__pressure-img,
+.today__precipitation-img,
+.today__wind-img{
+    width: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+}
+.today__temp-temp,
+.today__pressure-pressure,
+.today__precipitation-precipitation,
+.today__wind-wind{
+    width: 20%;
+    font-weight: 400;
+    font-size: 14px;
+    color: #939cb0;
+}
+.today__temp-difference,
+.today__temp-ok,
+.today__temp-nou,
+.today__temp-direction{
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+}
+.today__data-pressure {
+    display: flex;
+    align-items: center;
+    column-gap: 4%;
+}
+.today__data-precipitation {
+    display: flex;
+    align-items: center;
+    column-gap: 4%;
+}
+.today__data-wind {
+    display: flex;
+    align-items: center;
+    column-gap: 4%;
+}
+
+@media (max-width: 940px){
+    .article__today-data {
+        background: #4f4f4f;
+    }
+}
+
+@media (max-width: 660px){
+    .article__today-data{
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 460px){
+    .today__temp-temp,
+    .today__pressure-pressure,
+    .today__precipitation-precipitation,
+    .today__wind-wind{
+        display: none;
+    }
+}
