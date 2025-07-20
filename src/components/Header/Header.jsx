@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+// import React from "react";
 import './Header.css'
 
 
-const Header = ({onChange}) =>{
+const Header = ({fetchWeather}) =>{
 
-    const handleNameChange = (event) => {
-        onChange(event.target.value)
-    }
+    const [newSity, setNewSity] = useState("");
 
     return (
         <header className="header">
@@ -19,10 +18,11 @@ const Header = ({onChange}) =>{
                 <div className="header__choose-form">
 
                     <input className="header__choose-input"
-                        onChange = {handleNameChange}
+                        value={newSity}
+                        onChange={(e) => setNewSity(e.target.value)}
                         type="text"
                         placeholder="Ведите город" />
-                    <button className="header__choose-btn">🔍</button>
+                    <button className="header__choose-btn" onClick={() => fetchWeather(newSity)}>🔍</button>
                 </div>
             </div>
         </header>

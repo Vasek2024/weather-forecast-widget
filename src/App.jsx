@@ -7,14 +7,9 @@ import Main from "./components/Main/Main";
 
 const App = () => {
 
-    const [name, setName] = useState("");
     const [city, setCity] = useState("");
     const [weather, setWeather] = useState(null);
-
-    const handleNameChange = (name) => {
-      setName(name)
-    }
-  
+    
     const fetchWeather = async (city) => {
         try {
           const getData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=ab955f21662b12a83937b65c3c86c310`)
@@ -30,20 +25,22 @@ const App = () => {
             location: data.name,
             icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
           });
-          // console.log(weather);
+          // console.log(city);
+          
         } catch (err) {
           console.error(err);
         }
       };
   
     useEffect(() => {
-        fetchWeather('bogotol')
+      city ? fetchWeather(city)
+       : fetchWeather('bogotol')
     })
 
 
   return (
     <div className="wrapper">
-      <Header onChange = {handleNameChange}/>
+      <Header fetchWeather = {fetchWeather}/>
       <Main weather={weather}/>
     </div>
   );
