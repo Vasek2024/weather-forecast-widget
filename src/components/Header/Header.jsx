@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import './Header.css'
 
 
-const Header = ({fetchWeather}) =>{
+const Header = ({newSitys}) =>{
 
     const [newSity, setNewSity] = useState("");
 
@@ -22,7 +22,7 @@ const Header = ({fetchWeather}) =>{
                         onChange={(e) => setNewSity(e.target.value)}
                         type="text"
                         placeholder="Ведите город" />
-                    <button className="header__choose-btn" onClick={() => fetchWeather(newSity)}>🔍</button>
+                    <button className="header__choose-btn" onClick={() => newSitys(newSity)}>🔍</button>
                 </div>
             </div>
         </header>

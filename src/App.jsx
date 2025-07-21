@@ -31,16 +31,21 @@ const App = () => {
           console.error(err);
         }
       };
-  
-    useEffect(() => {
-      city ? fetchWeather(city)
+
+      useEffect(() => {
+        city ? fetchWeather(city)
+         : fetchWeather('bogotol')
+      }, [city])
+
+      function newSitys (newSity) {
+        newSity ? fetchWeather(newSity)
        : fetchWeather('bogotol')
-    })
+      }
 
 
   return (
     <div className="wrapper">
-      <Header fetchWeather = {fetchWeather}/>
+      <Header newSitys = {newSitys}/>
       <Main weather={weather}/>
     </div>
   );
