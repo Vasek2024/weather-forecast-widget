@@ -9,10 +9,14 @@ const App = () => {
 
     const [city, setCity] = useState("");
     const [weather, setWeather] = useState(null);
+
+    const [lat, setLat] = useState('');
+    const [lon, setLon] = useState('');
+    const [weatherFiveDays, setWeatherFiveDays] = useState([]);
     
     const fetchWeather = async (city) => {
         try {
-          const getData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=ab955f21662b12a83937b65c3c86c310`)
+          const getData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=ru&appid=ab955f21662b12a83937b65c3c86c310`)
           const data = await getData.json();
           setWeather({
             temperature: Math.floor(data.main.temp),
@@ -24,29 +28,62 @@ const App = () => {
             description: data.weather[0].description,
             location: data.name,
             icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
+
+            lat: data.coord.lat,
+            lon: data.coord.lon,
           });
-          // console.log(city);
+          setLat(data.coord.lat)
+        setLon(data.coord.lon)
+          // console.log(data);
           
         } catch (err) {
           console.error(err);
         }
       };
 
+      
+
+      // верх
+      const fetchWeatherFiveDays = async (lat, lon) => {
+        try {
+          const getDataFiveDays = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=ru&cnt=7&appid=ab955f21662b12a83937b65c3c86c310`)
+          const datas = await getDataFiveDays.json();
+          setWeatherFiveDays(datas.list);
+          // console.log(datas.list);
+          // console.log(datas.list[2].main.temp);
+          
+        } catch (err) {
+          console.error(err);
+        }
+      };
+      // низ
+
+
       useEffect(() => {
         city ? fetchWeather(city)
          : fetchWeather('bogotol')
       }, [city])
+      fetchWeatherFiveDays(lat, lon)
 
       function newSitys (newSity) {
         newSity ? fetchWeather(newSity)
-       : fetchWeather('bogotol')
+        : fetchWeather('bogotol')
       }
 
+
+
+      // верх
+      // useEffect(() => {
+        
+      // })
+      // низ
+
+      
 
   return (
     <div className="wrapper">
       <Header newSitys = {newSitys}/>
-      <Main weather={weather}/>
+      <Main weather={weather} weatherFiveDays = {weatherFiveDays}/>
     </div>
   );
 };

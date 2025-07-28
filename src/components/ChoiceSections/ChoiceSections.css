@@ -9,14 +9,19 @@
     row-gap: 7px;
 }
 .choice__sections-title {
+    text-align: center;
     font-weight: 500;
     font-size: 18px;
     color: #fff;
 }
 .choice__sections-month {
+    text-align: center;
     font-weight: 400;
     font-size: 14px;
     color: #939cb0;
+}
+.choice__sections-img{
+    width: 30%;
 }
 
 .choice__sections-min {

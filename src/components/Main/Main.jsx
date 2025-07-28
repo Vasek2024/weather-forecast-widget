@@ -6,7 +6,7 @@ import ChoiceNav from  "../ChoiceNav/ChoiceNav"
 import ChoiceSections from '../ChoiceSections/ChoiceSections'
 
 
-const Main = ({weather}) => {
+const Main = ({weather, weatherFiveDays}) => {
 
   return(
       <main className="main">
@@ -17,13 +17,13 @@ const Main = ({weather}) => {
           <article className="article__choice">
               <ChoiceNav />
               <section className="article__choice-sections">
+                  <ChoiceSections weatherFiveDays = {weatherFiveDays}/>
+                  {/* <ChoiceSections />
                   <ChoiceSections />
                   <ChoiceSections />
                   <ChoiceSections />
                   <ChoiceSections />
-                  <ChoiceSections />
-                  <ChoiceSections />
-                  <ChoiceSections />
+                  <ChoiceSections /> */}
               </section>
           </article>
       </main>
