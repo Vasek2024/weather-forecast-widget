@@ -18,12 +18,6 @@ const Main = ({weather, weatherFiveDays}) => {
               <ChoiceNav />
               <section className="article__choice-sections">
                   <ChoiceSections weatherFiveDays = {weatherFiveDays}/>
-                  {/* <ChoiceSections />
-                  <ChoiceSections />
-                  <ChoiceSections />
-                  <ChoiceSections />
-                  <ChoiceSections />
-                  <ChoiceSections /> */}
               </section>
           </article>
       </main>

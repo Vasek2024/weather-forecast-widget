@@ -42,8 +42,6 @@ const App = () => {
       };
 
       
-
-      // верх
       const fetchWeatherFiveDays = async (lat, lon) => {
         try {
           const getDataFiveDays = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=ru&cnt=7&appid=ab955f21662b12a83937b65c3c86c310`)
@@ -56,29 +54,23 @@ const App = () => {
           console.error(err);
         }
       };
-      // низ
-
 
       useEffect(() => {
         city ? fetchWeather(city)
          : fetchWeather('bogotol')
       }, [city])
-      fetchWeatherFiveDays(lat, lon)
+
+
+      useEffect(() => {
+        lat ? fetchWeatherFiveDays(lat, lon):null
+      }, [lat])
+
+
 
       function newSitys (newSity) {
         newSity ? fetchWeather(newSity)
         : fetchWeather('bogotol')
       }
-
-
-
-      // верх
-      // useEffect(() => {
-        
-      // })
-      // низ
-
-      
 
   return (
     <div className="wrapper">
