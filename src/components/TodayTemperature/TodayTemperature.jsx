@@ -6,6 +6,7 @@ const TodayTemperature = ({weather}) => {
 
   const [now, setNow] = useState(new Date())
   setInterval(() => {setNow(new Date()), 1000})
+  // console.log(weather);
 
 return (
         weather && (

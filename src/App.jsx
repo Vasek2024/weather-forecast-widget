@@ -13,6 +13,8 @@ const App = () => {
     const [lat, setLat] = useState('');
     const [lon, setLon] = useState('');
     const [weatherFiveDays, setWeatherFiveDays] = useState([]);
+
+    const [icons, setIcons] = useState(`https://openweathermap.org/img/wn/`);
     
     const fetchWeather = async (city) => {
         try {
@@ -46,7 +48,8 @@ const App = () => {
         try {
           const getDataFiveDays = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=ru&cnt=7&appid=ab955f21662b12a83937b65c3c86c310`)
           const datas = await getDataFiveDays.json();
-          setWeatherFiveDays(datas.list);
+          // const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
+          setWeatherFiveDays(datas.list, icons);
           // console.log(datas.list);
           // console.log(datas.list[2].main.temp);
           
@@ -75,7 +78,7 @@ const App = () => {
   return (
     <div className="wrapper">
       <Header newSitys = {newSitys}/>
-      <Main weather={weather} weatherFiveDays = {weatherFiveDays}/>
+      <Main weather={weather} weatherFiveDays = {weatherFiveDays} icons = {icons}/>
     </div>
   );
 };
