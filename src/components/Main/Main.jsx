@@ -2,11 +2,11 @@
 import './Main.css'
 import TodayTemperature from "../TodayTemperature/TodayTemperature";
 import TodayData from "../TodayData/TodayData";
-import ChoiceNav from  "../ChoiceNav/ChoiceNav"
+// import ChoiceNav from  "../ChoiceNav/ChoiceNav"
 import ChoiceSections from '../ChoiceSections/ChoiceSections'
 
 
-const Main = ({weather, weatherFiveDays, icons}) => {
+const Main = ({weather, weatherFiveDays, icons, newDays}) => {
 
   return(
       <main className="main">
@@ -15,7 +15,8 @@ const Main = ({weather, weatherFiveDays, icons}) => {
               <TodayData weather={weather}/>
           </article>
           <article className="article__choice">
-              <ChoiceNav />
+          <button className="choice__nav-one btn" onClick={() => newDays()}>Обновить на неделю</button>
+              {/* <ChoiceNav newDays = {newDays}/> */}
               <section className="article__choice-sections">
                   <ChoiceSections weatherFiveDays = {weatherFiveDays} icons = {icons}/>
               </section>

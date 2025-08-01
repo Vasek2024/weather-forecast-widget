@@ -75,10 +75,18 @@ const App = () => {
         : fetchWeather('bogotol')
       }
 
+      function newDays () {
+        fetchWeatherFiveDays(lat, lon)
+      }
+
   return (
     <div className="wrapper">
       <Header newSitys = {newSitys}/>
-      <Main weather={weather} weatherFiveDays = {weatherFiveDays} icons = {icons}/>
+      <Main weather={weather}
+            weatherFiveDays = {weatherFiveDays}
+            icons = {icons}
+            newDays = {newDays}
+            />
     </div>
   );
 };
