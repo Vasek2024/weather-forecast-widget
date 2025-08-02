@@ -4,7 +4,6 @@ import './App.css'
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 
-
 const App = () => {
 
     const [city, setCity] = useState("");
@@ -36,8 +35,6 @@ const App = () => {
           });
           setLat(data.coord.lat)
         setLon(data.coord.lon)
-          // console.log(data);
-          
         } catch (err) {
           console.error(err);
         }
@@ -48,11 +45,7 @@ const App = () => {
         try {
           const getDataFiveDays = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=ru&cnt=7&appid=ab955f21662b12a83937b65c3c86c310`)
           const datas = await getDataFiveDays.json();
-          // const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
           setWeatherFiveDays(datas.list, icons);
-          // console.log(datas.list);
-          // console.log(datas.list[2].main.temp);
-          
         } catch (err) {
           console.error(err);
         }
@@ -89,5 +82,65 @@ const App = () => {
             />
     </div>
   );
+
+
+  // const [city, setCity] = useState("");
+  //   const [data, setData] = useState([]);
+  //   const [error, setError] = useState([]);
+  //   const onCityChange = (e) => {
+  //     setCity(e.target.value);
+  //   };
+  
+  //   const getCityFromCoords = async (lat, lon) => {
+  //     const response = await fetch(
+  //       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=ab955f21662b12a83937b65c3c86c310`
+  //     );
+  //     const data = await response.json();
+  //     setCity(data.name);
+  //   };
+  
+  //   const getCoords = async () => {
+  //     if ("geolocation" in navigator) {
+  //       await navigator.geolocation.getCurrentPosition(async (position) => {
+  //         const { coords } = position;
+  //         getCityFromCoords(coords.latitude, coords.longitude);
+  //         fetchData(1, coords.latitude, coords.longitude);
+  //       });
+  //     }
+  //   };
+  
+  //   const fetchData = async (count, lat, lon) => {
+  //     const response = await fetch(
+  //       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=ab955f21662b12a83937b65c3c86c310&cnt=${count}&lat=${lat}&lon=${lon}`
+  //     );
+  //     const data = await response.json();
+  //     if (data.cod === "404") {
+  //       setError(data.message);
+  //     }
+  //     if (data.cod === "200") {
+  //       setData(data.list);
+  //       setError("");
+  //       console.log(data);
+  //     }
+  //   };
+  
+  //   return (
+  //     <div className="App">
+  //       <button onClick={() => fetchData(1)}>Today</button>
+  //       <button onClick={() => fetchData(5)}>Five Days</button>
+  //       <button onClick={getCoords}>Five Days</button>
+  //       <input type="text" value={city} onChange={onCityChange} />
+  //       {error}
+  //       {data.map((item) => {
+  //         return (
+  //           <div className="weather" style={{ border: "1px solid blue" }}>
+  //             <div>{item.main.temp - 273}C</div>
+  //             <div>{item.main.humidity}%</div>
+  //             <div>{item.main.pressure}мм/рт/ст</div>
+  //           </div>
+  //         );
+  //       })}
+  //     </div>
+  //   );
 };
 export default App;

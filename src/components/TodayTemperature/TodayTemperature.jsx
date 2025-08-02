@@ -1,4 +1,3 @@
-// import React, { useState, useEffect } from "react";
 import { useState } from 'react'
 import './TodayTemperature.css'
 
@@ -6,7 +5,6 @@ const TodayTemperature = ({weather}) => {
 
   const [now, setNow] = useState(new Date())
   setInterval(() => {setNow(new Date()), 1000})
-  // console.log(weather);
 
 return (
         weather && (
