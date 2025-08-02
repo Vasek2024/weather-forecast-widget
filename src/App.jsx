@@ -15,6 +15,7 @@ const App = () => {
 
     const [icons, setIcons] = useState(`https://openweathermap.org/img/wn/`);
     
+    
     const fetchWeather = async (city) => {
         try {
           const getData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=ru&appid=ab955f21662b12a83937b65c3c86c310`)
